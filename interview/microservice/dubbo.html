@@ -1,13 +1,283 @@
 <!doctype html>
-<html lang="en" dir="ltr" class="docs-wrapper plugin-docs plugin-id-docs docs-version-current" data-has-hydrated="false">
+<html lang="en" dir="ltr" class="docs-wrapper plugin-docs plugin-id-interview docs-version-current docs-doc-page docs-doc-id-microservice/dubbo" data-has-hydrated="false">
 <head>
 <meta charset="UTF-8">
-<meta name="generator" content="Docusaurus v3.2.1">
-<title data-rh="true">🤟 👍 🤘</title><meta data-rh="true" property="og:title" content="🤟 👍 🤘"><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://tts-home.github.io/notes/interview/microservice/dubbo"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-docs-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-docs-current"><link data-rh="true" rel="icon" href="/notes/img/favicon.ico"><link data-rh="true" rel="canonical" href="https://tts-home.github.io/notes/interview/microservice/dubbo"><link data-rh="true" rel="alternate" href="https://tts-home.github.io/notes/interview/microservice/dubbo" hreflang="en"><link data-rh="true" rel="alternate" href="https://tts-home.github.io/notes/interview/microservice/dubbo" hreflang="x-default"><link rel="stylesheet" href="/notes/assets/css/styles.bad67f78.css">
-<script src="/notes/assets/js/runtime~main.b3afc3a5.js" defer="defer"></script>
-<script src="/notes/assets/js/main.063f2efd.js" defer="defer"></script>
+<meta name="generator" content="Docusaurus v3.3.2">
+<title data-rh="true">Dubbo  |  🤟 👍 🤘</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://tts-home.github.io/notes/interview/microservice/dubbo"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-interview-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-interview-current"><meta data-rh="true" property="og:title" content="Dubbo  |  🤟 👍 🤘"><meta data-rh="true" name="description" content="服务发现与注册"><meta data-rh="true" property="og:description" content="服务发现与注册"><link data-rh="true" rel="icon" href="/notes/img/favicon.ico"><link data-rh="true" rel="canonical" href="https://tts-home.github.io/notes/interview/microservice/dubbo"><link data-rh="true" rel="alternate" href="https://tts-home.github.io/notes/interview/microservice/dubbo" hreflang="en"><link data-rh="true" rel="alternate" href="https://tts-home.github.io/notes/interview/microservice/dubbo" hreflang="x-default"><link rel="stylesheet" href="/notes/assets/css/styles.4ec07408.css">
+<script src="/notes/assets/js/runtime~main.dfab72e2.js" defer="defer"></script>
+<script src="/notes/assets/js/main.9b0d6f4f.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
-<script>!function(){function t(t){document.documentElement.setAttribute("data-theme",t)}var e=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return localStorage.getItem("theme")}catch(t){}}();t(null!==e?e:"dark")}(),function(){try{const c=new URLSearchParams(window.location.search).entries();for(var[t,e]of c)if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id="__docusaurus"><div role="region" aria-label="Skip to main content"><a class="skipToContent_fXgn" href="#__docusaurus_skipToContent_fallback">Skip to main content</a></div><nav aria-label="Main" class="navbar navbar--fixed-top navbarHideable_m1mJ"><div class="navbar__inner"><div class="navbar__items"><button aria-label="Toggle navigation bar" aria-expanded="false" class="navbar__toggle clean-btn" type="button"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></button><a class="navbar__brand" target="_self" href="/notes/"><div class="navbar__logo"><img src="/notes/img/tts.png" alt="TTS" class="themedComponent_mlkZ themedComponent--light_NVdE" height="32" width="32"><img src="/notes/img/tts.png" alt="TTS" class="themedComponent_mlkZ themedComponent--dark_xIcU" height="32" width="32"></div><b class="navbar__title text--truncate">Coding Notes</b></a></div><div class="navbar__items navbar__items--right"><a aria-current="page" class="navbar__item navbar__link navbar__link--active" target="_self" href="/notes/interview">Interview</a><div class="toggle_vylO colorModeToggle_DEke"><button class="clean-btn toggleButton_gllP toggleButtonDisabled_aARS" type="button" disabled="" title="Switch between dark and light mode (currently dark mode)" aria-label="Switch between dark and light mode (currently dark mode)" aria-live="polite"><svg viewBox="0 0 24 24" width="24" height="24" class="lightToggleIcon_pyhR"><path fill="currentColor" d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" class="darkToggleIcon_wfgR"><path fill="currentColor" d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"></path></svg></button></div><div class="navbarSearchContainer_Bca1"></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div></nav><div id="__docusaurus_skipToContent_fallback" class="main-wrapper mainWrapper_z2l0"><main class="container margin-vert--xl"><div class="row"><div class="col col--6 col--offset-3"><h1 class="hero__title">Page Not Found</h1><p>We could not find what you were looking for.</p><p>Please contact the owner of the site that linked you to the original URL and let them know their link is broken.</p></div></div></main></div><footer class="footer"><div class="container container-fluid"><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2024 TTS, Inc. Built with <a href="https://docusaurus.io/" target="_blank">Docusaurus</a>.</div></div></div></footer></div>
+<script>!function(){function t(t){document.documentElement.setAttribute("data-theme",t)}var e=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return localStorage.getItem("theme")}catch(t){}}();t(null!==e?e:"dark")}(),function(){try{const c=new URLSearchParams(window.location.search).entries();for(var[t,e]of c)if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id="__docusaurus"><div role="region" aria-label="Skip to main content"><a class="skipToContent_fXgn" href="#__docusaurus_skipToContent_fallback">Skip to main content</a></div><nav aria-label="Main" class="navbar navbar--fixed-top navbarHideable_m1mJ"><div class="navbar__inner"><div class="navbar__items"><button aria-label="Toggle navigation bar" aria-expanded="false" class="navbar__toggle clean-btn" type="button"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></button><a class="navbar__brand" target="_self" href="/notes/"><div class="navbar__logo"><img src="/notes/img/tts.png" alt="TTS" class="themedComponent_mlkZ themedComponent--light_NVdE" height="32" width="32"><img src="/notes/img/tts.png" alt="TTS" class="themedComponent_mlkZ themedComponent--dark_xIcU" height="32" width="32"></div><b class="navbar__title text--truncate">Coding Notes</b></a></div><div class="navbar__items navbar__items--right"><a aria-current="page" class="navbar__item navbar__link navbar__link--active" target="_self" href="/notes/interview">Interview</a><div class="toggle_vylO colorModeToggle_DEke"><button class="clean-btn toggleButton_gllP toggleButtonDisabled_aARS" type="button" disabled="" title="Switch between dark and light mode (currently dark mode)" aria-label="Switch between dark and light mode (currently dark mode)" aria-live="polite"><svg viewBox="0 0 24 24" width="24" height="24" class="lightToggleIcon_pyhR"><path fill="currentColor" d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" class="darkToggleIcon_wfgR"><path fill="currentColor" d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"></path></svg></button></div><div class="navbarSearchContainer_Bca1"></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div></nav><div id="__docusaurus_skipToContent_fallback" class="main-wrapper mainWrapper_z2l0"><div class="docsWrapper_hBAB"><button aria-label="Scroll back to top" class="clean-btn theme-back-to-top-button backToTopButton_sjWU" type="button"></button><div class="docRoot_UBD9"><aside class="theme-doc-sidebar-container docSidebarContainer_YfHR"><div class="sidebarViewport_aRkj"><div class="sidebar_njMd sidebarWithHideableNavbar_wUlq"><a tabindex="-1" class="sidebarLogo_isFc" target="_self" href="/notes/"><img src="/notes/img/tts.png" alt="TTS" class="themedComponent_mlkZ themedComponent--light_NVdE" height="32" width="32"><img src="/notes/img/tts.png" alt="TTS" class="themedComponent_mlkZ themedComponent--dark_xIcU" height="32" width="32"><b>Coding Notes</b></a><nav aria-label="Docs sidebar" class="menu thin-scrollbar menu_SIkG"><ul class="theme-doc-sidebar-menu menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/notes/interview">Interview</a></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/notes/interview/base/collection_map">base</a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/notes/interview/cicd/docker">cicd</a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/notes/interview/database/elastic_search">database</a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/notes/interview/framework/mybatis">framework</a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--sublist-caret menu__link--active" role="button" aria-expanded="true" href="/notes/interview/microservice/dubbo">microservice</a></div><ul style="display:block;overflow:visible;height:auto" class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link menu__link--active" aria-current="page" tabindex="0" href="/notes/interview/microservice/dubbo">Dubbo</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/notes/interview/microservice/eureka_ribbon_feign">Eureka &amp; Ribbon &amp; Feign</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/notes/interview/microservice/nacos">Nacos</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/notes/interview/microservice/spring_cloud">Spring Cloud</a></li></ul></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/notes/interview/mq/kafka">mq</a></div></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/notes/interview/other">Other</a></li></ul></nav><button type="button" title="Collapse sidebar" aria-label="Collapse sidebar" class="button button--secondary button--outline collapseSidebarButton_PEFL"><svg width="20" height="20" aria-hidden="true" class="collapseSidebarButtonIcon_kv0_"><g fill="#7a7a7a"><path d="M9.992 10.023c0 .2-.062.399-.172.547l-4.996 7.492a.982.982 0 01-.828.454H1c-.55 0-1-.453-1-1 0-.2.059-.403.168-.551l4.629-6.942L.168 3.078A.939.939 0 010 2.528c0-.548.45-.997 1-.997h2.996c.352 0 .649.18.828.45L9.82 9.472c.11.148.172.347.172.55zm0 0"></path><path d="M19.98 10.023c0 .2-.058.399-.168.547l-4.996 7.492a.987.987 0 01-.828.454h-3c-.547 0-.996-.453-.996-1 0-.2.059-.403.168-.551l4.625-6.942-4.625-6.945a.939.939 0 01-.168-.55 1 1 0 01.996-.997h3c.348 0 .649.18.828.45l4.996 7.492c.11.148.168.347.168.55zm0 0"></path></g></svg></button></div></div></aside><main class="docMainContainer_TBSr"><div class="container padding-top--md padding-bottom--lg"><div class="row"><div class="col docItemCol_VOVn"><div class="docItemContainer_Djhp"><article><nav class="theme-doc-breadcrumbs breadcrumbsContainer_Z_bl" aria-label="Breadcrumbs"><ul class="breadcrumbs" itemscope="" itemtype="https://schema.org/BreadcrumbList"><li class="breadcrumbs__item"><a aria-label="Home page" class="breadcrumbs__link" href="/notes/"><svg viewBox="0 0 24 24" class="breadcrumbHomeIcon_YNFT"><path d="M10 19v-5h4v5c0 .55.45 1 1 1h3c.55 0 1-.45 1-1v-7h1.7c.46 0 .68-.57.33-.87L12.67 3.6c-.38-.34-.96-.34-1.34 0l-8.36 7.53c-.34.3-.13.87.33.87H5v7c0 .55.45 1 1 1h3c.55 0 1-.45 1-1z" fill="currentColor"></path></svg></a></li><li class="breadcrumbs__item"><span class="breadcrumbs__link">microservice</span><meta itemprop="position" content="1"></li><li itemscope="" itemprop="itemListElement" itemtype="https://schema.org/ListItem" class="breadcrumbs__item breadcrumbs__item--active"><span class="breadcrumbs__link" itemprop="name">Dubbo</span><meta itemprop="position" content="2"></li></ul></nav><div class="tocCollapsible_ETCw theme-doc-toc-mobile tocMobile_ITEo"><button type="button" class="clean-btn tocCollapsibleButton_TO0P">On this page</button></div><div class="theme-doc-markdown markdown"><h1>Dubbo</h1>
+<h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="服务发现与注册">服务发现与注册<a href="#服务发现与注册" class="hash-link" aria-label="Direct link to 服务发现与注册" title="Direct link to 服务发现与注册">​</a></h2>
+<ul>
+<li>服务提供者 <code>Provider</code> 在启动时，向注册中心注册自己提供的服务</li>
+<li>服务消费者 <code>Consumer</code> 在启动时，向注册中心订阅自己所需的服务</li>
+<li>注册中心 <code>Registry</code> 返回服务提供者地址列表给消费者，如果有变更，注册中心将基于长连接推送变更数据给消费者</li>
+<li>服务消费者 <code>Consumer</code> 从提供者地址列表中，基于软负载均衡算法，选一台提供者进行调用，如果调用失败，再选另一台调用</li>
+</ul>
+<h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="注册中心">注册中心<a href="#注册中心" class="hash-link" aria-label="Direct link to 注册中心" title="Direct link to 注册中心">​</a></h2>
+<ul>
+<li><code>Zookeeper</code>（推荐）<!-- -->
+<ul>
+<li>分布式协调服务，是一个树型的目录服务，支持变更推送，适合作为 <code>Dubbo</code> 服务的注册中心，可用于生产环境，并推荐使用</li>
+</ul>
+</li>
+<li><code>Nacos</code>
+<ul>
+<li>阿里推出的动态服务发现、服务配置、服务元数据及流量管理、多租户的开源项目，同时支持注册中心、配置中心分离和合并部署</li>
+</ul>
+</li>
+<li><code>Multicast</code>
+<ul>
+<li>不需要启动任何中心节点，只要广播地址就可以互相发现，组播受网络结构限制，只适合小规模应用或开发阶段使用</li>
+</ul>
+</li>
+<li><code>Redis</code>
+<ul>
+<li>使用 <code>Redis</code> 的 <code>Key/Map</code> 结构存储数据结构，使用 <code>Redis</code> 的 <code>Publish/Subscribe</code> 事件通知数据变更</li>
+</ul>
+</li>
+<li><code>Simple</code>
+<ul>
+<li>本身就是一个普通的 <code>Dubbo</code> 服务，可以减少第三方依赖，使整体通讯方式一致</li>
+</ul>
+</li>
+</ul>
+<h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="负载均衡策略">负载均衡策略<a href="#负载均衡策略" class="hash-link" aria-label="Direct link to 负载均衡策略" title="Direct link to 负载均衡策略">​</a></h2>
+<ul>
+<li><code>RandomLoadBalance</code> - 加权随机，默认算法，默认权重相同<!-- -->
+<ul>
+<li>按权重设置随机概率</li>
+<li>在一个截面上碰撞的概率高，但调用量越大分布越均匀，而且按概率使用权重后也比较均匀，有利于动态调整提供者权重</li>
+<li>存在慢的提供者累积请求的问题，比如：第二台机器很慢，但没挂，当请求调到第二台时就卡在那，久而久之，所有请求都卡在调到第二台上</li>
+</ul>
+</li>
+<li><code>RoundRobinLoadBalance</code> - 加权轮询，借鉴于 Nginx 的平滑加权轮询算法，默认权重相同<!-- -->
+<ul>
+<li>按公约后的权重设置轮询比率，循环调用节点</li>
+<li>同样存在慢的提供者累积请求的问题</li>
+</ul>
+</li>
+<li><code>LeastActiveLoadBalance</code> - 最少活跃优先 + 加权随机，背后是能者多劳的思想<!-- -->
+<ul>
+<li>活跃数越低，越优先调用，相同活跃数的进行加  权随机（活跃数指调用前后计数差（针对特定提供者：请求发送数 - 响应返回数），表示特定提供者的任务堆积量，活跃数越低，代表该提供者处理能力越强）</li>
+<li>使慢的提供者收到更少请求，因为越慢的提供者的调用前后计数差会越大，相对的，处理能力越强的节点，处理更多的请求。</li>
+</ul>
+</li>
+<li><code>ShortestResponseLoadBalance</code> - 最短响应优先 + 加权随机，关注响应速度<!-- -->
+<ul>
+<li>在最近一个滑动窗口中，响应时间越短，越优先调用，相同响应时间的进行加权随机</li>
+<li>使得响应时间越快的提供者，处理更多的请求</li>
+<li>可能会造成流量过于集中于高性能节点的问题</li>
+</ul>
+</li>
+<li><code>ConsistentHashLoadBalance</code> - 一致性 <code>Hash</code>，确定的入参，确定的提供者，适用于有状态请求<!-- -->
+<ul>
+<li>当某一台提供者挂时，原本发往该提供者的请求，基于虚拟节点，平摊到其它提供者，不会引起剧烈变动</li>
+<li>缺省只对第一个参数 <code>Hash</code></li>
+<li>缺省用 <code>160</code> 份虚拟节点</li>
+</ul>
+</li>
+</ul>
+<h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="集群容错方案">集群容错方案<a href="#集群容错方案" class="hash-link" aria-label="Direct link to 集群容错方案" title="Direct link to 集群容错方案">​</a></h2>
+<ul>
+<li><code>Failover Cluster</code> - 失败自动切换，当出现失败，重试其它服务器，通常用于读操作，但重试会带来更长延迟（缺省）</li>
+<li><code>Failfast Cluster</code> - 快速失败，只发起一次调用，失败立即报错，通常用于非幂等性的写操作，比如新增记录</li>
+<li><code>Failsafe Cluster</code> - 失败安全，出现异常时，直接忽略，通常用于写入审计日志等操作</li>
+<li><code>Failback Cluster</code> - 失败自动恢复，后台记录失败请求，定时重发，通常用于消息通知操作</li>
+<li><code>Forking Cluster</code> - 并行调用多个服务器，只要一个成功即返回，通常用于实时性要求较高的读操作，但需要浪费更多服务资源</li>
+<li><code>Broadcast Cluster</code> - 广播调用所有提供者，逐个调用，任意一台报错则报错，通常用于通知所有提供者更新缓存或日志等本地资源信息</li>
+<li><code>Available Cluster</code> - 调用目前可用的实例（只调用一个），如果当前没有可用的实例，则抛出异常，通常用于不需要负载均衡的场景</li>
+<li><code>Mergeable Cluster</code> - 将集群中的调用结果聚合起来返回结果，通常和 <code>group</code> 一起配合使用</li>
+<li><code>ZoneAware Cluster</code> - 多注册中心订阅的场景，注册中心集群间的负载均衡<!-- -->
+<ul>
+<li>指定优先级</li>
+<li>同中心优先</li>
+<li>权重轮询</li>
+<li>缺省值：选择一个可用的注册中心</li>
+</ul>
+</li>
+</ul>
+<h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="超时设置">超时设置<a href="#超时设置" class="hash-link" aria-label="Direct link to 超时设置" title="Direct link to 超时设置">​</a></h2>
+<ul>
+<li>服务提供者端设置超时时间</li>
+<li>服务消费者端设置超时时间</li>
+<li>消费者端设置了超时时间，以消费者端为主</li>
+<li>调用服务不成功时，默认是会重试两次</li>
+</ul>
+<h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="协议">协议<a href="#协议" class="hash-link" aria-label="Direct link to 协议" title="Direct link to 协议">​</a></h2>
+<ul>
+<li><code>dubbo</code>
+<ul>
+<li>单一长连接，适合大并发小数据量的服务调用，以及消费者远大于提供者。<code>TCP</code> 协议，异步， <code>Hessian</code> 序列化。</li>
+</ul>
+</li>
+<li><code>rest</code>
+<ul>
+<li>基于标准的 <code>Java REST API - JAX-RS 2.0</code>（<code>Java API for RESTful Web Services</code> 的简写）实现的 <code>REST</code> 调用支持。多个短连接  ，<code>HTTP</code> 协议，同步，<code>json/xml</code> 序列化。</li>
+</ul>
+</li>
+<li><code>HTTP</code>
+<ul>
+<li>基于 <code>HTTP</code> 表单的远程调用协议，采用 <code>Spring HttpInvoker</code> 实现。多个短连接，<code>HTTP</code> 协议，同步，<code>JSON</code> 序列化，传入参数大小混合，提供者个数多于消费者，可给应用程序和浏览器 <code>JS</code> 调用。</li>
+</ul>
+</li>
+<li><code>Hessian</code>
+<ul>
+<li>集成 <code>Hessian</code> 服务，采用 <code>Servlet</code> 暴露服务，内嵌 <code>Jetty</code> 作为服务器默认实现，提供与 <code>Hession</code> 服务互操作。多个短连接，<code>HTTP</code> 协议，同步，<code>Hessian</code> 序列化，传入参数较大，提供者大于消费者，提供者压力较大，可传文件。</li>
+</ul>
+</li>
+<li><code>gRPC</code>
+<ul>
+<li>使用 <code>HTTP/2</code> 通信，带来 <code>Stream</code>、反压、<code>Reactive</code> 编程等能力。</li>
+</ul>
+</li>
+<li><code>RMI</code>
+<ul>
+<li>采用 <code>JDK</code> 标准的 <code>RMI</code> 协议实现，使用阻塞式短连接，传输数据包大小混合，消费者和提供者个数差不多。多个短连接，<code>TCP</code> 协议，同步，<code>JDK</code> 标准序列化。</li>
+</ul>
+</li>
+<li><code>WebService</code>
+<ul>
+<li>基于 <code>WebService</code> 的远程调用协议，集成 <code>CXF</code> 实现，提供和原生 <code>WebService</code> 的互操作。多个短连接，<code>HTTP</code> 协议，同步，<code>SOAP</code> 文本序列化，适用系统集成和跨语言调用。</li>
+</ul>
+</li>
+<li><code>Thrift</code>
+<ul>
+<li>原生协议的基础上添加了一些额外的头信息，比如 <code>service name</code>，<code>magic number</code>等。使用 <code>Thrift</code> 协议同样需要使用 <code>Thrift</code> 的 <code>IDL</code> 编译生成相应的 <code>Java</code> 代码。</li>
+</ul>
+</li>
+<li><code>Memcache</code>
+<ul>
+<li>基于 <code>Memcache</code> 实现的 <code>RPC</code> 协议。</li>
+</ul>
+</li>
+<li><code>Redis</code>
+<ul>
+<li>基于 <code>Redis</code> 实现的 <code>RPC</code> 协议。</li>
+</ul>
+</li>
+</ul>
+<h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="序列化">序列化<a href="#序列化" class="hash-link" aria-label="Direct link to 序列化" title="Direct link to 序列化">​</a></h2>
+<ul>
+<li><code>avro</code></li>
+<li><code>fastjson</code></li>
+<li><code>FST</code> （推荐）</li>
+<li><code>gson</code></li>
+<li><code>hessian2</code> （默认）</li>
+<li><code>jdk</code></li>
+<li><code>kryo</code> （推荐）</li>
+<li><code>protobuf</code></li>
+<li><code>protostuff</code></li>
+</ul>
+<h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="服务容器">服务容器<a href="#服务容器" class="hash-link" aria-label="Direct link to 服务容器" title="Direct link to 服务容器">​</a></h2>
+<ul>
+<li><code>Spring Container</code></li>
+<li><code>Jetty Container</code></li>
+<li><code>Log4j Container</code></li>
+</ul>
+<h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="线程模型">线程模型<a href="#线程模型" class="hash-link" aria-label="Direct link to 线程模型" title="Direct link to 线程模型">​</a></h2>
+<ul>
+<li>如果事件处理的逻辑能迅速完成，并且不会发起新的 <code>IO</code> 请求，比如只是在内存中记个标识，则直接在 <code>IO</code> 线程上处理更快，因为减少了线程池调度。</li>
+<li>但如果事件处理逻辑较慢，或者需要发起新的 <code>IO</code> 请求，比如需要查询数据库，则必须派发到线程池，否则 <code>IO</code> 线程阻塞，将导致不能接收其它请求。</li>
+<li>如果用 <code>IO</code> 线程处理事件，又在事件处理过程中发起新的 <code>IO</code> 请求，比如在连接事件中发起登录请求，会报<code>可能引发死锁</code>异常，但不会真死锁。</li>
+</ul>
+<div class="language-xml codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#F8F8F2;--prism-background-color:#282A36"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-xml codeBlock_bY9V thin-scrollbar" style="color:#F8F8F2;background-color:#282A36"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#F8F8F2"><span class="token tag punctuation" style="color:rgb(248, 248, 242)">&lt;</span><span class="token tag namespace" style="color:rgb(255, 121, 198)">dubbo:</span><span class="token tag" style="color:rgb(255, 121, 198)">protocol</span><span class="token tag" style="color:rgb(255, 121, 198)"> </span><span class="token tag attr-name" style="color:rgb(241, 250, 140)">name</span><span class="token tag attr-value punctuation attr-equals" style="color:rgb(248, 248, 242)">=</span><span class="token tag attr-value punctuation" style="color:rgb(248, 248, 242)">&quot;</span><span class="token tag attr-value" style="color:rgb(255, 121, 198)">dubbo</span><span class="token tag attr-value punctuation" style="color:rgb(248, 248, 242)">&quot;</span><span class="token tag" style="color:rgb(255, 121, 198)"> </span><span class="token tag attr-name" style="color:rgb(241, 250, 140)">dispatcher</span><span class="token tag attr-value punctuation attr-equals" style="color:rgb(248, 248, 242)">=</span><span class="token tag attr-value punctuation" style="color:rgb(248, 248, 242)">&quot;</span><span class="token tag attr-value" style="color:rgb(255, 121, 198)">all</span><span class="token tag attr-value punctuation" style="color:rgb(248, 248, 242)">&quot;</span><span class="token tag" style="color:rgb(255, 121, 198)"> </span><span class="token tag attr-name" style="color:rgb(241, 250, 140)">threadpool</span><span class="token tag attr-value punctuation attr-equals" style="color:rgb(248, 248, 242)">=</span><span class="token tag attr-value punctuation" style="color:rgb(248, 248, 242)">&quot;</span><span class="token tag attr-value" style="color:rgb(255, 121, 198)">fixed</span><span class="token tag attr-value punctuation" style="color:rgb(248, 248, 242)">&quot;</span><span class="token tag" style="color:rgb(255, 121, 198)"> </span><span class="token tag attr-name" style="color:rgb(241, 250, 140)">threads</span><span class="token tag attr-value punctuation attr-equals" style="color:rgb(248, 248, 242)">=</span><span class="token tag attr-value punctuation" style="color:rgb(248, 248, 242)">&quot;</span><span class="token tag attr-value" style="color:rgb(255, 121, 198)">100</span><span class="token tag attr-value punctuation" style="color:rgb(248, 248, 242)">&quot;</span><span class="token tag" style="color:rgb(255, 121, 198)"> </span><span class="token tag punctuation" style="color:rgb(248, 248, 242)">/&gt;</span><br></span></code></pre><div class="buttonGroup__atx"><button type="button" aria-label="Copy code to clipboard" title="Copy" class="clean-btn"><span class="copyButtonIcons_eSgA" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_y97N"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_LjdS"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div>
+<h3 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="dispatcher"><code>Dispatcher</code><a href="#dispatcher" class="hash-link" aria-label="Direct link to dispatcher" title="Direct link to dispatcher">​</a></h3>
+<ul>
+<li><code>all</code> - 所有消息都派发到线程池，包括请求，响应，连接事件，断开事件，心跳等</li>
+<li><code>direct</code> - 所有消息都不派发到线程池，全部在 <code>IO</code> 线程上直接执行</li>
+<li><code>message</code> - 只有请求响应消息派发到线程池，其它连接断开事件，心跳等消息，直接在 <code>IO</code> 线程上执行</li>
+<li><code>execution</code> - 只有请求消息派发到线程池，不含响应，响应和其它连接断开事件，心跳等消息，直接在 <code>IO</code> 线程上执行</li>
+<li><code>connection</code> - 在 <code>IO</code> 线程上，将连接断开事件放入队列，有序逐个执行，其它消息派发到线程池</li>
+</ul>
+<h3 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="threadpool"><code>ThreadPool</code><a href="#threadpool" class="hash-link" aria-label="Direct link to threadpool" title="Direct link to threadpool">​</a></h3>
+<ul>
+<li><code>fixed</code> - 固定大小线程池，启动时建立线程，不关闭，一直持有(缺省)</li>
+<li><code>cached</code> - 缓存线程池，空闲一分钟自动删除，需要时重建</li>
+<li><code>limited</code> - 可伸缩线程池，但池中的线程数只会增长不会收缩，只增长不收缩的目的是为了避免收缩时突然来了大流量引起的性能问题</li>
+<li><code>eager</code> - 优先创建Worker线程池，在任务数量大于 <code>corePoolSize</code> 但是小于 <code>maximumPoolSize</code> 时，优先创建 <code>Worker</code> 来处理任务；当任务数量大于 <code>maximumPoolSize</code> 时，将任务放入阻塞队列中，阻塞队列充满时抛出RejectedExecutionException（相比于 <code>cached:cached</code> 在任务数量超过 <code>maximumPoolSize</code> 时直接抛出异常而不是将任务放入阻塞队列）</li>
+</ul>
+<h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="spi">SPI<a href="#spi" class="hash-link" aria-label="Direct link to SPI" title="Direct link to SPI">​</a></h2>
+<ul>
+<li><code>dubbo spi</code> 实现原理和 <code>java spi</code> 相似，只不过增强了一些功能和优化。<code>java spi</code> 的是把所有的 <code>spi</code> 都加载到内存，但对于 <code>dubbo</code> 来说可能只需要加载用户指定的实现方式，而不需要全部加载进来，全部加载也会有性能问题，所以 <code>dubbo</code> 实现的是在有用到的时候去加载这些扩展组件</li>
+</ul>
+<h3 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="重要的注解">重要的注解<a href="#重要的注解" class="hash-link" aria-label="Direct link to 重要的注解" title="Direct link to 重要的注解">​</a></h3>
+<ul>
+<li><code>@SPI</code>
+<ul>
+<li>被此注解标记的接口，就表示是一个可扩展的接口，并标注默认值</li>
+</ul>
+</li>
+<li><code>@Adaptive</code>
+<ul>
+<li>有两种使用方式，一种是注解在类上，一种是注解在方法上</li>
+</ul>
+</li>
+<li><code>@Activate</code>
+<ul>
+<li>需要标注在类上或者方法上，并注明被激活的条件，以及所有的被激活实现类中的排序信息</li>
+</ul>
+</li>
+</ul>
+<h3 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="spi-声明加载目录"><code>SPI</code> 声明加载目录<a href="#spi-声明加载目录" class="hash-link" aria-label="Direct link to spi-声明加载目录" title="Direct link to spi-声明加载目录">​</a></h3>
+<ul>
+<li><code>META-INF/services/</code> - 用来兼容 <code>Java SPI</code></li>
+<li><code>META-INF/dubbo/</code> - 存放用户自定义的 <code>SPI</code> 配置</li>
+<li><code>META-INF/dubbo/internal/</code> - 存放 <code>Dubbo</code> 内部使用的 <code>SPI</code> 配置</li>
+</ul>
+<h3 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="加载流程">加载流程<a href="#加载流程" class="hash-link" aria-label="Direct link to 加载流程" title="Direct link to 加载流程">​</a></h3>
+<ol>
+<li>通过 <code>SPI</code> 接口类型查找/创建 <code>ExtensionLoader</code> （从 <code>extension loader cache</code> 中找，没有则创建）</li>
+<li>通过 <code>SPI</code> 名称用 <code>ExtensionLoader</code> 查找/创建 <code>SPI</code> 实现实例（从 <code>instance cache</code> 中找，没有则创建）</li>
+</ol>
+<h3 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="实现实例创建流程">实现实例创建流程<a href="#实现实例创建流程" class="hash-link" aria-label="Direct link to 实现实例创建流程" title="Direct link to 实现实例创建流程">​</a></h3>
+<ol>
+<li>通过 <code>SPI</code> 名称在 <code>class cache</code> 查找 <code>SPI</code> 实现类名，没有则从 <code>SPI</code> 的 <code>3</code> 个配置目录读取出声明的 <code>SPI</code> 实现类名放入 <code>class cache</code></li>
+<li>从 <code>class cache</code> 查找实现类，创建 <code>SPI</code> 实现实例，放入 <code>instance cache</code></li>
+<li>实例注入与包装</li>
+</ol>
+<h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="调用流程">调用流程<a href="#调用流程" class="hash-link" aria-label="Direct link to 调用流程" title="Direct link to 调用流程">​</a></h2>
+<ul>
+<li>消费者通过代理对象 <code>Proxy</code> 发起远程调用，接着通过网络客户端 <code>Client</code> 将编码后的请求发送给服务提供方的网络层上，也就是 <code>Server</code>。<code>Server</code> 在收到请求后，首先要做的事情是对数据包进行解码，然后将解码后的请求发送至分发器 <code>Dispatcher</code>，再由分发器将请求派发到指定的线程池上，最后由线程池调用具体的服务。这就是一个远程调用请求的发送与接收过程。</li>
+</ul>
+<ol>
+<li>客户端（Client）以本地调用的方式调用远程服务。</li>
+<li>客户端代理对象（Client Stub）将本次请求的相关信息（要调用的类名、方法名、方法参数等）封装成 Request，并且对其序列化，为网络通信做准备。</li>
+<li>客户端代理对象（Client Stub）找到服务端（Server）的地址，通过网络（Socket 通信）将 Request 发送到服务端。</li>
+<li>服务端代理对象（Server Stub）接收到客户端（Client）的请求后，将二进制数据反序列化为 Request。</li>
+<li>服务端代理对象（Server Stub）根据调用信息向本地的方法发起调用。</li>
+<li>服务端代理对象（Server Stub）将调用后的结果封装到 Response 中，并且对其序列化，通过网络发送给客户端。</li>
+<li>客户端代理对象（Client Stub）收到响应后，将其反序列化为 Response，远程调用结束。</li>
+</ol>
+<h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="服务治理">服务治理<a href="#服务治理" class="hash-link" aria-label="Direct link to 服务治理" title="Direct link to 服务治理">​</a></h2>
+<ul>
+<li>服务治理主要作用是改变运行时服务的行为和选址逻辑，达到限流，权重配置等目的</li>
+</ul>
+<h3 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="标签路由">标签路由<a href="#标签路由" class="hash-link" aria-label="Direct link to 标签路由" title="Direct link to 标签路由">​</a></h3>
+<ul>
+<li>以应用作为维度，给不同的服务器打上不同名字的标签，调用的时候，客户端可以通过 <code>setAttachment</code> 的方式，来设置不同的标签名称，可以通过这种方式来实现流量隔离，灰度发布等功能</li>
+</ul>
+<h3 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="条件路由">条件路由<a href="#条件路由" class="hash-link" aria-label="Direct link to 条件路由" title="Direct link to 条件路由">​</a></h3>
+<ul>
+<li>可随时在服务治理控制台写入路由规则，在发起一次RPC调用前起到过滤目标服务器地址的作用，过滤后的地址列表，将作为消费端最终发起RPC调用的备选地址</li>
+</ul>
+<h3 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="黑白名单">黑白名单<a href="#黑白名单" class="hash-link" aria-label="Direct link to 黑白名单" title="Direct link to 黑白名单">​</a></h3>
+<ul>
+<li>条件路由的一部分，规则存储和条件路由放在一起，为了方便配置所以单独拿出来，同样可以通过服务和应用两个维度，指定黑名单和白名单</li>
+</ul>
+<h3 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="动态配置">动态配置<a href="#动态配置" class="hash-link" aria-label="Direct link to 动态配置" title="Direct link to 动态配置">​</a></h3>
+<ul>
+<li>和路由规则平行的另一类服务治理治理功能，主要作用是在不重启服务的情况下，动态改变调用行为，支持服务和应用两个维度的配置</li>
+</ul>
+<h3 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="权重调节">权重调节<a href="#权重调节" class="hash-link" aria-label="Direct link to 权重调节" title="Direct link to 权重调节">​</a></h3>
+<ul>
+<li>是动态配置的子功能，主要作用是改变服务端的权重，更大的权重会有更大的几率被客户端选中作为服务提供者，从而达到流量分配的目的</li>
+</ul>
+<h3 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="负载均衡">负载均衡<a href="#负载均衡" class="hash-link" aria-label="Direct link to 负载均衡" title="Direct link to 负载均衡">​</a></h3>
+<ul>
+<li>动态配置的子功能，主要作用是调整客户端的选址逻辑，目前可选的负载均衡策略有随机，轮询和最小活跃。</li>
+</ul></div></article><nav class="pagination-nav docusaurus-mt-lg" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/notes/interview/framework/sso"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">单点登录</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/notes/interview/microservice/eureka_ribbon_feign"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">Eureka &amp; Ribbon &amp; Feign</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#服务发现与注册" class="table-of-contents__link toc-highlight">服务发现与注册</a></li><li><a href="#注册中心" class="table-of-contents__link toc-highlight">注册中心</a></li><li><a href="#负载均衡策略" class="table-of-contents__link toc-highlight">负载均衡策略</a></li><li><a href="#集群容错方案" class="table-of-contents__link toc-highlight">集群容错方案</a></li><li><a href="#超时设置" class="table-of-contents__link toc-highlight">超时设置</a></li><li><a href="#协议" class="table-of-contents__link toc-highlight">协议</a></li><li><a href="#序列化" class="table-of-contents__link toc-highlight">序列化</a></li><li><a href="#服务容器" class="table-of-contents__link toc-highlight">服务容器</a></li><li><a href="#线程模型" class="table-of-contents__link toc-highlight">线程模型</a><ul><li><a href="#dispatcher" class="table-of-contents__link toc-highlight"><code>Dispatcher</code></a></li><li><a href="#threadpool" class="table-of-contents__link toc-highlight"><code>ThreadPool</code></a></li></ul></li><li><a href="#spi" class="table-of-contents__link toc-highlight">SPI</a><ul><li><a href="#重要的注解" class="table-of-contents__link toc-highlight">重要的注解</a></li><li><a href="#spi-声明加载目录" class="table-of-contents__link toc-highlight"><code>SPI</code> 声明加载目录</a></li><li><a href="#加载流程" class="table-of-contents__link toc-highlight">加载流程</a></li><li><a href="#实现实例创建流程" class="table-of-contents__link toc-highlight">实现实例创建流程</a></li></ul></li><li><a href="#调用流程" class="table-of-contents__link toc-highlight">调用流程</a></li><li><a href="#服务治理" class="table-of-contents__link toc-highlight">服务治理</a><ul><li><a href="#标签路由" class="table-of-contents__link toc-highlight">标签路由</a></li><li><a href="#条件路由" class="table-of-contents__link toc-highlight">条件路由</a></li><li><a href="#黑白名单" class="table-of-contents__link toc-highlight">黑白名单</a></li><li><a href="#动态配置" class="table-of-contents__link toc-highlight">动态配置</a></li><li><a href="#权重调节" class="table-of-contents__link toc-highlight">权重调节</a></li><li><a href="#负载均衡" class="table-of-contents__link toc-highlight">负载均衡</a></li></ul></li></ul></div></div></div></div></main></div></div></div><footer class="footer"><div class="container container-fluid"><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2024 TTS, Inc. Built with <a href="https://docusaurus.io/" target="_blank">Docusaurus</a>.</div></div></div></footer></div>
 </body>
 </html>
